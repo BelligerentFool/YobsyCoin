@@ -2268,16 +2268,16 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
 
         // Genesis Block:
-         //CBlock(hash=000000000019d6, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=4a5e1e, nTime=1231006505, nBits=1d00ffff, nNonce=2083236893, vtx=1)
+         //CBlock(hash=000000000019d6, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=4a5e1e, nTime=1488190267, nBits=1d00ffff, nNonce=77355955, vtx=1)
            //CTransaction(hash=4a5e1e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-             //CTxIn(COutPoint(000000, -1), coinbase 04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73)
+             //CTxIn(COutPoint(000000, -1), coinbase 04ffff001d01043032362f4665622f323031372042696c6c20506178746f6e2c204d6f7669652047726561742c2044696573206174203631)
              //CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
            //vMerkleTree: 4a5e1e
 
         // Genesis block
-        const char* pszTimestamp = "MMXIV PoS Launch - 01-AUG-2014 - JTn1";
+        const char* pszTimestamp = "26/Feb/2017 Bill Paxton, Movie Great, Dies at 61";
         CTransaction txNew;
-        txNew.nTime = 1406851200;
+        txNew.nTime = 1488190266;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(9999) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2287,9 +2287,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1406851201;
+        block.nTime    = 1488190267;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 1604156441;
+        block.nNonce   = 77355955;
 
         if (fTestNet)
         {
@@ -2301,7 +2301,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xd5622eb6ab2b578487ac2e935c426adcf9642643ed3490aa8fa2cf0e4c9f2fe7"));         
+        assert(block.hashMerkleRoot == uint256("0xa1c986f852f16b25c82e272834f5601897ccf21ecec5febb2e4d7cc5a1145791"));         
         assert(block.GetHash() == hashGenesisBlock);
         block.print();
         assert(block.CheckBlock());

@@ -16,7 +16,7 @@
 // a large 4-byte int at any alignment.
 
 // YOBSY message start
-static unsigned char pchMessageStartMain[4] = { 0x4D, 0x1E, 0xA6, 0xB7 };
+static unsigned char pchMessageStartMain[4] = { 0x4D, 0xC7, 0xA6, 0xB7 };
 // Public testnet message start
 static unsigned char pchMessageStartTest[4] = { 0x4d, 0x54, 0x54, 0x44 };
 
